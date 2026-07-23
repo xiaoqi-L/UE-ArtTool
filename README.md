@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="docs/images/tool.png" alt="ArtTool 编辑器工具界面" width="49%" />
-  <img src="docs/images/tool2.png" alt="ArtTool 资产工具界面" width="49%" />
-</p>
-
 <h1 align="center">ArtTool</h1>
 
 <p align="center">
@@ -19,6 +14,16 @@ ArtTool 基于 Editor Utility Widget、Blueprint 和 Python 启动脚本实现�
 
 > [!IMPORTANT]
 > 本插件仅用于 Unreal Editor。删除空 Actor、移除碰撞、模型减面等操作会修改关卡或资产；执行批量操作前请保存关卡并确认已接入版本控制。
+
+## 界面预览
+
+<p align="center">
+  <img src="docs/images/tool.png" alt="ArtTool 编辑器工具界面" width="100%" />
+</p>
+
+<p align="center">
+  <img src="docs/images/tool2.png" alt="ArtTool 资产工具界面" width="100%" />
+</p>
 
 ## 目录
 
