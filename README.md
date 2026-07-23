@@ -18,11 +18,8 @@ ArtTool 基于 Editor Utility Widget、Blueprint 和 Python 启动脚本实现�
 ## 界面预览
 
 <p align="center">
-  <img src="docs/images/tool.png" alt="ArtTool 编辑器工具界面" width="100%" />
-</p>
-
-<p align="center">
-  <img src="docs/images/tool2.png" alt="ArtTool 资产工具界面" width="100%" />
+  <img src="docs/images/tool.png" alt="ArtTool 编辑器工具界面" width="48%" />
+  <img src="docs/images/tool2.png" alt="ArtTool 资产工具界面" width="48%" />
 </p>
 
 ## 目录
