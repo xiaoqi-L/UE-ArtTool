@@ -28,6 +28,10 @@
 		{
 			"Name": "ScriptableToolsEditorMode",
 			"Enabled": true
+		},
+		{
+			"Name": "PythonScriptPlugin",
+			"Enabled": true
 		}
 	],
 	"IsBetaVersion": false,
