@@ -7,7 +7,7 @@
 <br />
 
 [![Version](https://img.shields.io/badge/version-1.0-blue?style=flat-square)](ArtTool/ArtTool.uplugin)
-[![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-5.7-0E1128?style=flat-square&logo=unrealengine)](https://www.unrealengine.com/)
+[![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-UE5-0E1128?style=flat-square&logo=unrealengine)](https://www.unrealengine.com/)
 [![Platform](https://img.shields.io/badge/platform-Editor%20Only-555?style=flat-square)](ArtTool/ArtTool.uplugin)
 [![License](https://img.shields.io/badge/license-Epic%20Sample-green?style=flat-square)](ArtTool/Content/Python/addWidget_plugins.py)
 
@@ -45,7 +45,6 @@ ArtTool 是基于 **Editor Utility Widget**、**Blueprint** 和 **Python 启动�
 - [依赖与配置](#依赖与配置)
 - [目录结构](#目录结构)
 - [已知限制](#已知限制)
-- [故障排查](#故障排查)
 - [开发说明](#开发说明)
 
 ---
@@ -113,46 +112,6 @@ import verify_arttool; verify_arttool.run()
 ---
 
 ## 功能概览
-
-### 架构
-
-```mermaid
-flowchart TB
-    subgraph entry [入口层]
-        ToolbarBtn["工具栏 · 美术工具"]
-        PythonScript["addWidget_plugins.py"]
-        ArtTool["/ArtTool/Art_Tool"]
-    end
-
-    subgraph ui [UI 层]
-        Switcher["Widget Switcher"]
-        WBP1["WBP_nSpaceDevTool"]
-        WBP2["WBP_nSpaceDevTool_2"]
-    end
-
-    subgraph features [功能层]
-        SceneActor["场景 Actor"]
-        Debug["Debug 视图"]
-        AssetTools["资产工具"]
-    end
-
-    PythonScript --> ToolbarBtn
-    ToolbarBtn --> ArtTool
-    ArtTool --> Switcher
-    Switcher --> WBP1
-    Switcher --> WBP2
-    WBP1 --> SceneActor
-    WBP1 --> Debug
-    WBP2 --> AssetTools
-```
-
-### 模块总览
-
-| 模块 | 核心能力 |
-| :-- | :-- |
-| **场景 Actor** | 材质/模型批量替换与回退、光照贴图分辨率、空 Actor 清理、距离测量 |
-| **Debug** | 材质 Debug、色彩校准、UV Overlay、Lumen Reflections、Specular Range |
-| **资产工具** | 材质实例参数复制/粘贴、模型减面、自动 LOD、碰撞、贴图合并 |
 
 ### 工具界面
 
@@ -323,47 +282,6 @@ UE-ArtTool/
 
 ---
 
-## 故障排查
-
-<details>
-<summary><strong>工具栏没有出现「美术工具」按钮</strong></summary>
-
-1. 确认 **Python Editor Script Plugin** 已启用
-2. 确认 `addWidget_plugins.py` 已写入 Startup Scripts 配置
-3. 完全重启 Unreal Editor（非仅重载关卡）
-4. 检查 Output Log 中是否有 Python 脚本报错
-
-</details>
-
-<details>
-<summary><strong>打开工具时提示资产不存在</strong></summary>
-
-1. 在 Content Browser 中启用 **Show Plugin Content**
-2. 确认 `/ArtTool/Art_Tool` 等核心资产已存在于插件 Content 目录
-3. 若从 Git 克隆，执行 `git lfs pull` 拉取 `.uasset` 文件
-
-</details>
-
-<details>
-<summary><strong>部分功能按钮无响应或报错</strong></summary>
-
-1. 确认 **Geometry Scripting**、**Editor Scripting Utilities** 等依赖插件已启用
-2. 重新编译相关 Blueprint，检查是否有编译错误
-3. 确认当前选中对象类型符合功能要求（如 Static Mesh Actor）
-
-</details>
-
-<details>
-<summary><strong>verify_arttool.py 验证失败</strong></summary>
-
-查看 Output Log 中的 `[ArtTool Verify]` 日志，按提示逐项修复：
-
-- **Plugin not enabled** → 在 Plugins 窗口启用对应插件并重启
-- **Missing asset** → 检查 Content 目录或使用 Git LFS 拉取资产
-- **Failed to open Widget** → 确认 `Art_Tool` Blueprint 可正常编译
-
-</details>
-
 ---
 
 ## 开发说明
@@ -390,6 +308,6 @@ UE-ArtTool/
 
 <div align="center">
 
-**ArtTool** · Unreal Engine 5.7 · Editor-only Plugin
+**ArtTool** · Unreal Engine UE5 · Editor-only Plugin
 
 </div>
