@@ -28,6 +28,10 @@ ArtTool 是基于 **Editor Utility Widget**、**Blueprint** 和 **Python 启动�
 >
 > 本插件仅用于 Unreal Editor。删除空 Actor、移除碰撞、模型减面等操作会**直接修改关卡或资产**。执行批量操作前，请先保存关卡并确认已接入版本控制。
 
+> **版本兼容**
+>
+> 本插件开发时使用的引擎版本为 Unreal Engine **5.7**。如需应用到其他 UE 版本，请自行编译并适配。
+
 ## 界面预览
 
 <div align="center">
